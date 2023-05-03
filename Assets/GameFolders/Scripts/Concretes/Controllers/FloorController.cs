@@ -7,8 +7,7 @@ namespace GameFolders.Scripts.Concretes.Controllers
 {
     public class FloorController : MonoBehaviour
     {
-        [Range(2f, 5f)]
-        [SerializeField] private float moveSpeed = 2f;
+        [Range(1f, 2f)] [SerializeField] private float moveSpeed = 1f;
         
         private Material _material;
 
