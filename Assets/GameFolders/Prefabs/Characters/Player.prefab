@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c8bd3927376a14f8aa5bcf46050eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveBoundary: 4.5
   moveSpeed: 10
   jumpForce: 1500
-  isJump: 0
 --- !u!114 &5184519687773212614
 MonoBehaviour:
   m_ObjectHideFlags: 0

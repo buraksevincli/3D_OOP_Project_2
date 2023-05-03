@@ -11,6 +11,7 @@ namespace GameFolders.Scripts.Concretes.Controllers
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private float moveBoundary;
         [SerializeField] private float moveSpeed;
         [SerializeField] private float jumpForce;
         
@@ -18,6 +19,9 @@ namespace GameFolders.Scripts.Concretes.Controllers
         private JumpWithRigidbody _jumpWithRigidbody;
         private IInputReader _input;
 
+        public float MoveSpeed => moveSpeed;
+        public float MoveBoundary => moveBoundary;
+        
         private float _horizontal;
         private bool _isJump;
 
@@ -30,7 +34,7 @@ namespace GameFolders.Scripts.Concretes.Controllers
 
         private void FixedUpdate()
         {
-            _horizontalMover.TickFixed(_horizontal, moveSpeed);
+            _horizontalMover.TickFixed(_horizontal);
 
             if (_isJump)
             {
@@ -44,8 +48,6 @@ namespace GameFolders.Scripts.Concretes.Controllers
         {
             _horizontal = _input.Horizontal;
             _isJump = _input.IsJump;
-            Debug.Log($"_isJump: {_isJump}");
-            Debug.Log($"_input: {_input.IsJump}");
         }
     }
 }
