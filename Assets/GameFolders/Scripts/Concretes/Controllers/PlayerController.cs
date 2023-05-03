@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using GameFolders.Scripts.Abstracts.Inputs;
 using GameFolders.Scripts.Concretes.Inputs;
+using GameFolders.Scripts.Concretes.Managers;
 using GameFolders.Scripts.Concretes.Movements;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,6 +25,7 @@ namespace GameFolders.Scripts.Concretes.Controllers
         
         private float _horizontal;
         private bool _isJump;
+        private bool _isDead = false;
 
         private void Awake()
         {
@@ -45,8 +47,21 @@ namespace GameFolders.Scripts.Concretes.Controllers
 
         private void Update()
         {
+            if(_isDead) return;
+            
             _horizontal = _input.Horizontal;
             _isJump = _input.IsJump;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            EnemyController enemyController = other.GetComponent<EnemyController>();
+
+            if (enemyController != null)
+            {
+                GameManager.Instance.StopGame();
+                _isDead = true;
+            }
         }
     }
 }
