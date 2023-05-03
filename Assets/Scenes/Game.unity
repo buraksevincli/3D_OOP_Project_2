@@ -292,6 +292,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1519320512039841064, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: max
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519320512039841064, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: min
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519320512237179651, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: max
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519320512237179651, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: min
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519320512323941643, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: max
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519320512323941643, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: min
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519320512487362332, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: max
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519320512487362332, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: min
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2602464672579891728, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -335,6 +367,14 @@ PrefabInstance:
     - target: {fileID: 2602464672579891728, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676542100818440463, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: max
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676542100818440463, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+      propertyPath: min
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6916818559225542978, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
       propertyPath: m_Name
