@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace GameFolders.Scripts.Concretes.UIs
 {
-    public class MenuPanel : MonoBehaviour
+    public class GameOverPanel : MonoBehaviour
     {
-        public void StartButton()
+        public void RetryButton()
         {
             GameManager.Instance.LoadScene("Game");
         }
 
-        public void ExitButton()
+        public void MenuButton()
         {
-            GameManager.Instance.ExitGame();
+            GameManager.Instance.LoadScene("Menu");
         }
     }
 }
