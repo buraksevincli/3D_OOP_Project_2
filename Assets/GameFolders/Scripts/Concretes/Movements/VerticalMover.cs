@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using GameFolders.Scripts.Abstracts.Controllers;
 using GameFolders.Scripts.Abstracts.Movements;
-using GameFolders.Scripts.Concretes.Controllers;
 using UnityEngine;
 
 namespace GameFolders.Scripts.Concretes.Movements
@@ -16,7 +13,7 @@ namespace GameFolders.Scripts.Concretes.Movements
         public VerticalMover(IEntityController entityController)
         {
             _entityController = entityController;
-            // _moveSpeed = entityController.MoveSpeed;
+            _moveSpeed = entityController.MoveSpeed;
         }
 
         public void FixedTick(float vertical = 1)

@@ -1,20 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using GameFolders.Scripts.Abstracts.Controllers;
+using GameFolders.Scripts.Concretes.Enums;
 using GameFolders.Scripts.Concretes.Managers;
 using GameFolders.Scripts.Concretes.Movements;
 using UnityEngine;
 
 namespace GameFolders.Scripts.Concretes.Controllers
 {
-    public class EnemyController : MonoBehaviour, IEntityController
+    public class EnemyController : MyCharacterController, IEntityController
     {
-        [SerializeField] private float moveSpeed = 10f;
+        [SerializeField] private EnemyEnum enemyEnum;
         [SerializeField] private float maxLifeTime = 10f;
+
+        public EnemyEnum EnemyType => enemyEnum;
         
-        public float MoveSpeed => moveSpeed;
         private float _currentLifeTime = 0f;
         
         private VerticalMover _verticalMover;

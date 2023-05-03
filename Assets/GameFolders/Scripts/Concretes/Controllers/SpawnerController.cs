@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameFolders.Scripts.Concretes.Enums;
 using GameFolders.Scripts.Concretes.Managers;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -16,6 +17,10 @@ namespace GameFolders.Scripts.Concretes.Controllers
 
         private float _maxSpawnTime;
         private float _currentSpawnTime = 0f;
+        private int _index = 0;
+        private float _maxAddEnemyTime;
+
+        public bool CanIncrease => _index < EnemyManager.Instance.Count;
 
         private void OnEnable()
         {
@@ -30,11 +35,19 @@ namespace GameFolders.Scripts.Concretes.Controllers
             {
                 Spawn();
             }
+            
+            if (!CanIncrease) return;
+
+            if (_maxAddEnemyTime < Time.time)
+            {
+                _maxAddEnemyTime = Time.time + EnemyManager.Instance.AddDelayTime;
+                IncreaseIndex();
+            }
         }
 
         private void Spawn()
         {
-            EnemyController newEnemy = EnemyManager.Instance.GetPool();
+            EnemyController newEnemy = EnemyManager.Instance.GetPool((EnemyEnum)Random.Range(0, _index));
             newEnemy.transform.parent = this.transform;
             newEnemy.transform.position = this.transform.position;
             newEnemy.gameObject.SetActive(true);
@@ -47,6 +60,14 @@ namespace GameFolders.Scripts.Concretes.Controllers
         private void GetRandomMaxTime()
         {
             _maxSpawnTime = Random.Range(min, max);
+        }
+        
+        private void IncreaseIndex()
+        {
+            if (CanIncrease)
+            {
+                _index++;
+            }
         }
     }
 }

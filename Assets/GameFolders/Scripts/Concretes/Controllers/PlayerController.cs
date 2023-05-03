@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using GameFolders.Scripts.Abstracts.Controllers;
 using GameFolders.Scripts.Abstracts.Inputs;
 using GameFolders.Scripts.Abstracts.Movements;
@@ -12,18 +9,16 @@ using UnityEngine.InputSystem;
 
 namespace GameFolders.Scripts.Concretes.Controllers
 {
-    public class PlayerController : MonoBehaviour, IEntityController
+    public class PlayerController : MyCharacterController, IEntityController
     {
-        [SerializeField] private float moveBoundary;
-        [SerializeField] private float moveSpeed;
+        
         [SerializeField] private float jumpForce;
         
         private IMover _mover;
         private IInputReader _input;
         private JumpWithRigidbody _jumpWithRigidbody;
 
-        public float MoveSpeed => moveSpeed;
-        public float MoveBoundary => moveBoundary;
+        
 
         private float _horizontal;
         private bool _isJump;

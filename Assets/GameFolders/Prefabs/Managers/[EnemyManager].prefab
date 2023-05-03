@@ -44,4 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c28598bfc92c549aa4e1cd72a38923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 522103278471346492, guid: 2de133d03a759f942a7fa812b95bb400, type: 3}
+  enemyPrefabs:
+  - {fileID: 522103278471346492, guid: 2de133d03a759f942a7fa812b95bb400, type: 3}
+  - {fileID: 7320582241859134230, guid: dda553279067ae541bd5ff383e1124db, type: 3}
+  - {fileID: 603580997261073914, guid: 15aecd92e6070d449ae08ae82d0f979b, type: 3}
+  - {fileID: 7143879203813408047, guid: 28f8cf3fc247809489a5e77ab41206ff, type: 3}
+  addDelayTime: 20
