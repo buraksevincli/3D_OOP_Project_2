@@ -18,6 +18,7 @@ namespace GameFolders.Scripts.Concretes.Controllers
             RenderSettings.skybox = _levelDifficultyData.SkyboxMaterial;
             Instantiate(_levelDifficultyData.FloorPrefab);
             Instantiate(_levelDifficultyData.SpawnersPrefab);
+            EnemyManager.Instance.SetMoveSpeed(_levelDifficultyData.MoveSpeed);
         }
     }
 }

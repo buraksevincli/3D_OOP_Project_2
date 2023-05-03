@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb513ad943386847b6a493760acb692, type: 3}
   m_Name: Hard
   m_EditorClassIdentifier: 
-  floorPrefab: {fileID: 6060298505583837555, guid: e6a3329deb85aba49a32f5999a12a8e1, type: 3}
-  spawnersPrefab: {fileID: 6916818559225542978, guid: 585f6652fab4328458ff0349b16c756f, type: 3}
+  floorPrefab: {fileID: 924336644979885649, guid: 5da521d9b966ba74fa4939a02ef7bec4, type: 3}
+  spawnersPrefab: {fileID: 6829864892484793995, guid: 0a5f3136ffb986c4c97010107891530b, type: 3}
   skyboxMaterial: {fileID: 2100000, guid: 19e2485c6f92d6944ad20466ac77b04c, type: 2}
+  _moveSpeed: 20

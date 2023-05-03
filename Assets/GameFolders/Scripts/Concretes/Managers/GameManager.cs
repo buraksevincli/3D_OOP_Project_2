@@ -8,10 +8,10 @@ namespace GameFolders.Scripts.Concretes.Managers
 {
     public class GameManager : SingletonMonoBehaviourObject<GameManager>
     {
-        [SerializeField] public LevelDifficultyData[] levelDifficultyDatas;
+        [SerializeField] private LevelDifficultyData[] levelDifficultyData;
         public event System.Action OnGameStop;
 
-        public LevelDifficultyData LevelDifficultyData => levelDifficultyDatas[0];
+        public LevelDifficultyData LevelDifficultyData => levelDifficultyData[2];
         
         private void Awake()
         {

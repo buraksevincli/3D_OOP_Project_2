@@ -14,6 +14,8 @@ namespace GameFolders.Scripts.Concretes.Managers
         private Dictionary<EnemyEnum, Queue<EnemyController>> _enemies =
             new Dictionary<EnemyEnum, Queue<EnemyController>>();
 
+        private float _moveSpeed;
+
         public float AddDelayTime => addDelayTime;
         public int Count => enemyPrefabs.Length;
         private void Awake()
@@ -67,7 +69,15 @@ namespace GameFolders.Scripts.Concretes.Managers
                 }
             }
 
-            return enemyControllers.Dequeue();
+            EnemyController enemyController = enemyControllers.Dequeue();
+            enemyController.SetMoveSpeed(_moveSpeed);
+
+            return  enemyController;
+        }
+
+        public void SetMoveSpeed(float moveSpeed)
+        {
+            _moveSpeed = moveSpeed;
         }
     }
 }

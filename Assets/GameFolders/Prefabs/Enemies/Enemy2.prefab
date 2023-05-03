@@ -94,6 +94,10 @@ PrefabInstance:
       propertyPath: enemyEnum
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 210374736980633104, guid: 9e85acb9f1868a748af0705a2e109647, type: 3}
+      propertyPath: _moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2094939802423572615, guid: 9e85acb9f1868a748af0705a2e109647, type: 3}
       propertyPath: m_Name
       value: Enemy2

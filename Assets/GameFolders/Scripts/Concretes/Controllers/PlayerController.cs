@@ -18,8 +18,6 @@ namespace GameFolders.Scripts.Concretes.Controllers
         private IInputReader _input;
         private JumpWithRigidbody _jumpWithRigidbody;
 
-        
-
         private float _horizontal;
         private bool _isJump;
         private bool _isDead = false;
