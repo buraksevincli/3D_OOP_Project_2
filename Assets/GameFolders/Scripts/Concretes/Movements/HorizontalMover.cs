@@ -22,13 +22,17 @@ namespace GameFolders.Scripts.Concretes.Movements
         public void TickFixed(float horizontal)
         {
             if(horizontal == 0f) return;
+
+            Transform playerTransform = _playerController.transform;
+            Vector3 playerPosition = playerTransform.position;
             
-            _playerController.transform.Translate(Vector3.right * (horizontal * Time.deltaTime * _moveSpeed));
+            playerTransform.Translate(Vector3.right * (horizontal * Time.deltaTime * _moveSpeed));
 
-            float xBoundary = Mathf.Clamp(_playerController.transform.position.x, -_moveBoundary, _moveBoundary);
+            float xBoundary = Mathf.Clamp(playerTransform.position.x, -_moveBoundary, _moveBoundary);
 
-            _playerController.transform.position = new Vector3(xBoundary, _playerController.transform.position.y,
-                _playerController.transform.position.z);
+            playerPosition = new Vector3(xBoundary, playerPosition.y, playerPosition.z);
+
+            playerTransform.position = playerPosition;
         }
     }
 }

@@ -40,7 +40,6 @@ namespace GameFolders.Scripts.Concretes.Controllers
             {
                 _jumpWithRigidbody.TickFixed(jumpForce);
             }
-            
             _isJump = false;
         }
 
