@@ -1,9 +1,10 @@
+using GameFolders.Scripts.Abstracts.Movements;
 using GameFolders.Scripts.Concretes.Controllers;
 using UnityEngine;
 
 namespace GameFolders.Scripts.Concretes.Movements
 {
-    public class JumpWithRigidbody
+    public class JumpWithRigidbody : IJump
     {
         private Rigidbody _rigidbody;
 
@@ -14,7 +15,7 @@ namespace GameFolders.Scripts.Concretes.Movements
             _rigidbody = playerController.GetComponent<Rigidbody>();
         }
 
-        public void TickFixed(float jumpForce)
+        public void FixedTick(float jumpForce)
         {
             if (CanJump) return;
             

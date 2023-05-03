@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameFolders.Scripts.Concretes.Managers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,8 +9,6 @@ namespace GameFolders.Scripts.Concretes.Controllers
 {
     public class SpawnerController : MonoBehaviour
     {
-        [SerializeField] private EnemyController enemyPrefab;
-        
         [Range(0.1f,5f)]
         [SerializeField] private float min = 0.1f;
         [Range(6f,15f)]
@@ -35,9 +34,10 @@ namespace GameFolders.Scripts.Concretes.Controllers
 
         private void Spawn()
         {
-            EnemyController enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
-
-            enemy.transform.parent = this.transform;
+            EnemyController newEnemy = EnemyManager.Instance.GetPool();
+            newEnemy.transform.parent = this.transform;
+            newEnemy.transform.position = this.transform.position;
+            newEnemy.gameObject.SetActive(true);
             
             _currentSpawnTime = 0f;
             GetRandomMaxTime();

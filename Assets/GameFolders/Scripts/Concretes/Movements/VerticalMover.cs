@@ -1,25 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameFolders.Scripts.Abstracts.Controllers;
+using GameFolders.Scripts.Abstracts.Movements;
 using GameFolders.Scripts.Concretes.Controllers;
 using UnityEngine;
 
 namespace GameFolders.Scripts.Concretes.Movements
 {
-    public class VerticalMover
+    public class VerticalMover : IMover
     {
-        private EnemyController _enemyController;
+        private IEntityController _entityController;
 
         private float _moveSpeed;
 
-        public VerticalMover(EnemyController enemyController)
+        public VerticalMover(IEntityController entityController)
         {
-            _enemyController = enemyController;
-            _moveSpeed = enemyController.MoveSpeed;
+            _entityController = entityController;
+            // _moveSpeed = entityController.MoveSpeed;
         }
 
         public void FixedTick(float vertical = 1)
         {
-            _enemyController.transform.Translate(Vector3.back * (vertical * Time.deltaTime * _moveSpeed));
+            _entityController.transform.Translate(Vector3.back * (vertical * Time.deltaTime * _moveSpeed));
         }
     }
 }

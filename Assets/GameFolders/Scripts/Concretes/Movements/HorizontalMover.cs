@@ -1,29 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameFolders.Scripts.Abstracts.Controllers;
+using GameFolders.Scripts.Abstracts.Movements;
 using GameFolders.Scripts.Concretes.Controllers;
 using UnityEngine;
 
 namespace GameFolders.Scripts.Concretes.Movements
 {
-    public class HorizontalMover
+    public class HorizontalMover : IMover
     {
-        private PlayerController _playerController;
+        private IEntityController _entityController;
 
         private float _moveSpeed;
         private float _moveBoundary;
 
-        public HorizontalMover(PlayerController playerController)
+        public HorizontalMover(IEntityController entityController)
         {
-            _playerController = playerController;
-            _moveSpeed = _playerController.MoveSpeed;
-            _moveBoundary = _playerController.MoveBoundary;
+            _entityController = entityController;
+            // _moveSpeed = entityController.MoveSpeed;
+            // _moveBoundary = entityController.MoveBoundary;
         }
 
-        public void TickFixed(float horizontal)
+        public void FixedTick(float horizontal)
         {
             if(horizontal == 0f) return;
+            
 
-            Transform playerTransform = _playerController.transform;
+            Transform playerTransform = _entityController.transform;
             Vector3 playerPosition = playerTransform.position;
             
             playerTransform.Translate(Vector3.right * (horizontal * Time.deltaTime * _moveSpeed));

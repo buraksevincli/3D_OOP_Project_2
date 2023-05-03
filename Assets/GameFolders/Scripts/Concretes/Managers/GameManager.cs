@@ -9,6 +9,8 @@ namespace GameFolders.Scripts.Concretes.Managers
 {
     public class GameManager : SingletonMonoBehaviourObject<GameManager>
     {
+        public event System.Action OnGameStop;
+        
         private void Awake()
         {
             SingletonThisGameObject(this);
@@ -17,6 +19,8 @@ namespace GameFolders.Scripts.Concretes.Managers
         public void StopGame()
         {
             Time.timeScale = 0f;
+
+            OnGameStop?.Invoke();
         }
 
         public void LoadScene(string sceneName)

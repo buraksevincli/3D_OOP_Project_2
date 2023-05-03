@@ -2,16 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using GameFolders.Scripts.Abstracts.Controllers;
+using GameFolders.Scripts.Concretes.Managers;
 using GameFolders.Scripts.Concretes.Movements;
 using UnityEngine;
 
 namespace GameFolders.Scripts.Concretes.Controllers
 {
-    public class EnemyController : MonoBehaviour
+    public class EnemyController : MonoBehaviour, IEntityController
     {
         [SerializeField] private float moveSpeed = 10f;
         [SerializeField] private float maxLifeTime = 10f;
-
+        
         public float MoveSpeed => moveSpeed;
         private float _currentLifeTime = 0f;
         
@@ -40,7 +42,7 @@ namespace GameFolders.Scripts.Concretes.Controllers
 
         private void KillYourself()
         {
-            Destroy(this.gameObject);
+            EnemyManager.Instance.SetPool(this);
         }
     }
 }
