@@ -42,9 +42,13 @@ namespace GameFolders.Scripts.Concretes.Controllers
 
         private void Update()
         {
+            Debug.Log($"_isJump {_isJump}");
+            Debug.Log($"_input {_input.IsJump}");
+            
             if(_isDead) return;
             
             _horizontal = _input.Horizontal;
+
             _isJump = _input.IsJump;
         }
 
