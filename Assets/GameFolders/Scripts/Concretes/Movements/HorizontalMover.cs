@@ -7,15 +7,10 @@ namespace GameFolders.Scripts.Concretes.Movements
     public class HorizontalMover : IMover
     {
         private IEntityController _entityController;
-
-        private float _moveSpeed;
-        private float _moveBoundary;
-
+        
         public HorizontalMover(IEntityController entityController)
         {
             _entityController = entityController;
-            _moveSpeed = entityController.MoveSpeed;
-            _moveBoundary = entityController.MoveBoundary;
         }
 
         public void FixedTick(float horizontal)
@@ -26,9 +21,9 @@ namespace GameFolders.Scripts.Concretes.Movements
             Transform playerTransform = _entityController.transform;
             Vector3 playerPosition = playerTransform.position;
             
-            playerTransform.Translate(Vector3.right * (horizontal * Time.deltaTime * _moveSpeed));
+            playerTransform.Translate(Vector3.right * (horizontal * Time.deltaTime * _entityController.MoveSpeed));
 
-            float xBoundary = Mathf.Clamp(playerTransform.position.x, -_moveBoundary, _moveBoundary);
+            float xBoundary = Mathf.Clamp(playerTransform.position.x, -_entityController.MoveBoundary, _entityController.MoveBoundary);
 
             playerPosition = new Vector3(xBoundary, playerPosition.y, playerPosition.z);
 

@@ -11,7 +11,25 @@ namespace GameFolders.Scripts.Concretes.Managers
         [SerializeField] private LevelDifficultyData[] levelDifficultyData;
         public event System.Action OnGameStop;
 
-        public LevelDifficultyData LevelDifficultyData => levelDifficultyData[2];
+        public LevelDifficultyData LevelDifficultyData => levelDifficultyData[DifficultyIndex];
+
+        private int _difficultyIndex;
+
+        public int DifficultyIndex
+        {
+            get => _difficultyIndex;
+            set
+            {
+                if (_difficultyIndex < 0 || _difficultyIndex > levelDifficultyData.Length)
+                {
+                    LoadSceneAsync("Menu");
+                }
+                else
+                {
+                    _difficultyIndex = value;
+                }
+            }
+        }
         
         private void Awake()
         {

@@ -9,14 +9,14 @@ namespace GameFolders.Scripts.Concretes.Managers
     public class EnemyManager : SingletonMonoBehaviourObject<EnemyManager>
     {
         [SerializeField] private EnemyController[] enemyPrefabs;
-        [SerializeField] private float addDelayTime = 50f;
+        [SerializeField] private float _addDelayTime = 50f;
 
         private Dictionary<EnemyEnum, Queue<EnemyController>> _enemies =
             new Dictionary<EnemyEnum, Queue<EnemyController>>();
 
         private float _moveSpeed;
 
-        public float AddDelayTime => addDelayTime;
+        public float AddDelayTime => _addDelayTime;
         public int Count => enemyPrefabs.Length;
         private void Awake()
         {
@@ -65,6 +65,7 @@ namespace GameFolders.Scripts.Concretes.Managers
                 for (int i = 0; i < 2; i++)
                 {
                     EnemyController newEnemy = Instantiate(enemyPrefabs[(int)enemyType]);
+                    newEnemy.gameObject.SetActive(false);
                     enemyControllers.Enqueue(newEnemy);
                 }
             }
@@ -78,6 +79,11 @@ namespace GameFolders.Scripts.Concretes.Managers
         public void SetMoveSpeed(float moveSpeed)
         {
             _moveSpeed = moveSpeed;
+        }
+
+        public void SetDelayTime(float addDelayTime)
+        {
+            _addDelayTime = addDelayTime;
         }
     }
 }

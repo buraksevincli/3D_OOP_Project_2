@@ -19,6 +19,7 @@ namespace GameFolders.Scripts.Concretes.Controllers
             Instantiate(_levelDifficultyData.FloorPrefab);
             Instantiate(_levelDifficultyData.SpawnersPrefab);
             EnemyManager.Instance.SetMoveSpeed(_levelDifficultyData.MoveSpeed);
+            EnemyManager.Instance.SetDelayTime(_levelDifficultyData.AddDelayTime);
         }
     }
 }

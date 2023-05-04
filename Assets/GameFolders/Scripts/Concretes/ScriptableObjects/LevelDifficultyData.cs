@@ -12,10 +12,12 @@ namespace GameFolders.Scripts.Concretes.ScriptableObjects
         [SerializeField] private GameObject spawnersPrefab;
         [SerializeField] private Material skyboxMaterial;
         [SerializeField] private float _moveSpeed = 10f;
+        [SerializeField] private float _addDelayTime = 50f;
 
         public FloorController FloorPrefab => floorPrefab;
         public GameObject SpawnersPrefab => spawnersPrefab;
         public Material SkyboxMaterial => skyboxMaterial;
         public float MoveSpeed => _moveSpeed;
+        public float AddDelayTime => _addDelayTime;
     }
 }

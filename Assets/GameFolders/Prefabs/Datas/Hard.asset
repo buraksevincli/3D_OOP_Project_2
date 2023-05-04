@@ -16,3 +16,4 @@ MonoBehaviour:
   spawnersPrefab: {fileID: 6829864892484793995, guid: 0a5f3136ffb986c4c97010107891530b, type: 3}
   skyboxMaterial: {fileID: 2100000, guid: 19e2485c6f92d6944ad20466ac77b04c, type: 2}
   _moveSpeed: 20
+  _addDelayTime: 10
